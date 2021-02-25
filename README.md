@@ -80,24 +80,3 @@ For example, the following is an example execution
 [server]$ ./eft-dh -l 9999 > some-file.txt
 You may assume the server is started first, then the proxy, then the client.
 
-Part 5 (10 Extra Credit Points): Logjam attack on DH Key Exchange (lj-proxy)
-Part 5 is strictly optional extra credit. I have not completed it, and I don’t know how easy or hard it is. However, the idea is to use the logjam attack to eavesdrop on the communication between the client and server without performing multiple DH key exchanges. Instead, you should brute force the established key via the logjam attack and write the contents of the transmitted file to STDOUT.
-
-You must conform to the following command line options:
-
-lj-proxy -l PORT TARGET PORT
-For example, the following is an example execution.
-
-[client]$ ./eft-dh proxy.add.ress 9999 < some-file.txt
-
-[proxy]$  ./lj-proxy -l 9999 server.add.ress 9999 > some-file.txt
-
-[server]$ ./eft-dh -l 9999 > some-file.txt
-You may assume the server is started first, then the proxy, then the client.
-
-Note that since this may be beyond the computational ability of your personal computer, you may modify the g and p used in eft-dh. In this case, provide an alternate eft-dh-weak file that has this change. The solution with the largest p will receive and additional 5 points.
-
-CSC/ECE 574 - Computer and Network Security
-CSC/ECE 574 - Computer and Network Security
-whenck@ncsu.edu
-This is the course website for the Spring 2021 offering of CSC/ECE 574, Computer and Network Security, at the North Carolina State University.
